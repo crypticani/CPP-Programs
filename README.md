@@ -9,3 +9,8 @@ A collection of programs done by me during practical classes of C++
 - swapping using 3rd variable
 - swapping without using 3rd variable
 - use of ternary operator to check eligibility to vote
+
+### Practical tasks
+- Banking Transactions
+- Calculate electricity Bill
+- Shopping mall discount offer
