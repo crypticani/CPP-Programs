@@ -1,3 +1,5 @@
+// A program to check if you are eligible to cast a vote or not
+
 #include <iostream>
 using namespace std;
 
