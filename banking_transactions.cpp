@@ -7,10 +7,11 @@ using namespace std;
 
 int main(){
     int choice;
-    int balance=1000;
+    double balance=1000;
     cout<<"Welcome to the XYZ Bank"<<endl;
     while(1){
-        sleep(2);
+        banking:
+        sleep(1);
         cout<<endl<<"Please select an Input."<<endl;
         cout<<"1. Check Balance"<<endl<<"2. Deposit"<<endl<<"3. Withdrawal"<<endl<<"0. Exit"<<endl;
         cin>>choice;
@@ -21,7 +22,7 @@ int main(){
             case 2:
                 cout<<"Deposit Section"<<endl;
                 cout<<"Enter the amount you want to deposit: ";
-                int deposit_amount;
+                double deposit_amount;
                 cin>>deposit_amount;
                 balance = balance + deposit_amount;
                 cout<<"Transaction in progress..."<<endl;
@@ -32,19 +33,36 @@ int main(){
             case 3:
                 cout<<"Withdrawal Section"<<endl;
                 cout<<"Enter the amount you want to withdraw: ";
-                int withdrawal_amount;
+                double withdrawal_amount;
                 cin>>withdrawal_amount;
-                balance = balance - withdrawal_amount;
-                cout<<"Transaction in progress..."<<endl;
-                sleep(TRANSACTION_TIME);
-                cout<<"Rs."<<withdrawal_amount<<" debited from your account"<<endl;
-                cout<<"Your updated balance is Rs."<<balance<<endl;
+                if(withdrawal_amount>balance){
+                    cout<<"Insufficient Balance."<<endl;
+                }
+                else{
+                    balance = balance - withdrawal_amount;
+                    cout<<"Transaction in progress..."<<endl;
+                    sleep(TRANSACTION_TIME);
+                    cout<<"Rs."<<withdrawal_amount<<" debited from your account"<<endl;
+                    cout<<"Your updated balance is Rs."<<balance<<endl;
+                }
                 break;
             case 0:
                 exit(0);
                 break;
             default:
                 cout<<"Invalid Choice"<<endl;
+                char c;
+                cout<<"Do you want to continue(Y/N)?";
+                cin>>c;
+                if(c=='y')
+                {
+                    goto banking;
+                }
+                else
+                {
+                    cout<<"Thank you";
+                    exit(0);
+                }
         }
     }
     
