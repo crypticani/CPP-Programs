@@ -33,7 +33,7 @@ class production: public employee{
         
 };
 
-class marketing{
+class marketing: public employee{
     public:
         string empName[3] = {
             "Ram",
@@ -43,7 +43,7 @@ class marketing{
         double salary[3] = {23432, 243432, 45326};
         
 };
-class finance{
+class finance: public employee{
     public:
         string empName[3] = {
             "Ram",
@@ -53,7 +53,7 @@ class finance{
         double salary[3] = {23432, 243432, 45326};
         
 };
-class sales{
+class sales: public employee{
     public:
         string empName[3] = {
             "Ram",
@@ -66,8 +66,8 @@ class sales{
 
 int main() {
     production p;
-    // marketing m;
-    // finance f;
-    // sales s;
+    marketing m;
+    finance f;
+    sales s;
     p.getHighlyPaid();
 }

@@ -39,3 +39,7 @@
 !.vscode/extensions.json
 *.code-workspace
 .vscode/
+
+## MyFolders
+Assignment/*
+Python/*
